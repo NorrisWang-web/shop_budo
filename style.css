@@ -1,0 +1,88 @@
+body {
+    font-family: 'Sawarabi Mincho', serif;
+    margin: 0;
+    padding: 12px;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+#login_icon {
+    width: 72px;
+}
+
+#staff_login_icon {
+    width: 72px;
+}
+
+footer {
+
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+/* Bootstrap template*/
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+main {
+    display: block;
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+  }
+
+.form-floating {
+    position: relative;
+}
+
+.form-signin {
+    max-width: 500px;
+    padding: 1rem;
+}
+
+.nav-align {
+    max-width: 600px;
+    padding: 1rem;
+}
+.m-auto {
+    margin: auto !important;
+}
+.w-100 {
+    width: 100% !important;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
+}
+.py-4 {
+    padding-top: 1.5rem!important;
+    padding-bottom: 1.5rem!important;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.d-flex {
+    display: flex!important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+img, svg {
+    vertical-align: middle;
+}
