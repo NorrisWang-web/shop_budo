@@ -47,7 +47,7 @@ $_SESSION["member_login"] = 1;
 $_SESSION["member_name"] = $rec["name"];
 $_SESSION["member_code"] = $rec["code"];
 print "ログイン成功<br><br>";
-print "<a href='../shop/shop_list.php'>トップへ戻る</a>";
+print "<a href='../shop/shop_list.php'>商品一覧トップへ</a>";
         
 }
 catch(Exception $e) {
