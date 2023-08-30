@@ -3,11 +3,11 @@
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
-    print "ログインしていません。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "　ログインしていません。<br><br>";
+    print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"]."さんログイン中";
+    print "　".$_SESSION["name"]."さんログイン中";
     print "<br><br>";
 }
 ?>
@@ -35,7 +35,7 @@ if(isset($_SESSION["login"]) === false) {
     
 <body class="align-items-center py-4 bg-body-tertiary">
 
-<h1 class="h3 mb-3 fw-normal">商品一覧</h1>
+<h1 class="h3 mb-3 fw-normal">商品管理</h1>
 <div class="container text-center">
 <div class="row align-items-start">
 <?php
@@ -64,7 +64,7 @@ while(true) {
     if($rec === false) {
         break;
     }
-    print "<input type='radio' name='code' value='".$rec['code']."'>";
+    print "<input type='radio' name='code' value='".$rec['code']."'> ";
     print $rec["name"];
     print "---";
     print $rec["price"]."円";
@@ -87,6 +87,8 @@ catch(Exception $e) {
 </div>
 <br><br>
 
-    
+<footer>
+    <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+</footer>   
 </body>
 </html>

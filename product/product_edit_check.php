@@ -3,11 +3,11 @@
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
-    print "ログインしていません。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "　ログインしていません。<br><br>";
+    print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"]."さんログイン中";
+    print "　".$_SESSION["name"]."さんログイン中";
     print "<br><br>";
 }
 ?>
@@ -34,6 +34,9 @@ if(isset($_SESSION["login"]) === false) {
 </head>
     
 <body class="align-items-center py-4 bg-body-tertiary">
+
+<h1 class="h3 mb-3 fw-normal">商品情報修正確認</h1>
+
 <div class="container text-center">
     
 <?php
@@ -52,6 +55,7 @@ $cate = $post["cate"];
 if(empty($name) === true) {
     print "商品名が入力されていません。<br><br>";
 } else {
+    print "<p class='underline'>商品コード</p>";
     print $name;
     print "<br><br>";
 }
@@ -59,6 +63,7 @@ if(empty($name) === true) {
 if(preg_match("/\A[0-9]+\z/", $price) === 0) {
     print "正しい値を入力してください。<br><br>";
 } else {
+    print "<p class='underline'>価格</p>";
     print $price."円";
     print "<br><br>";
 }
@@ -67,13 +72,16 @@ if($image["size"] > 0) {
     if($image["size"] > 1000000) {
         print "ファイルのサイズが大きすぎます。<br><br>";
     } else {
+        print "<p class='underline'>画像</p>";
         move_uploaded_file($image["tmp_name"],"./image/".$image["name"]);
         print "<img src='./image/".$image['name']."'>";
         print "<br><br>";
     }
 }
-if($image["name"] === "") {if($old_image != "") {print "<img src='./image/".$old_image."'>" ;}} 
-print "<br><br>";
+if($image["name"] === "") {if($old_image != "") {
+    print "<p class='underline'>画像</p>";
+    print "<img src='./image/".$old_image."'>" ;}} 
+    print "<br><br>";
 
 if(empty($comments) === true) {
     print "詳細が入力されていません。";
@@ -83,6 +91,7 @@ if(mb_strlen($comments) > 100) {
     print "文字数は100文字が上限です。";
     print "<br><br>";
 } else {
+    print "<p class='underline'>詳細</p>";
     print $comments;
     print "<br><br>";
 }
@@ -108,5 +117,8 @@ if(empty($name) or preg_match("/\A[0-9]+\z/", $price) === 0 or $image["size"] > 
 }
 ?>
 </div>
+<footer>
+    <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+</footer>
 </body>
 </html>

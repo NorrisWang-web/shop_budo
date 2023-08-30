@@ -3,11 +3,11 @@
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
-    print "ログインしていません。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "　ログインしていません。<br><br>";
+    print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
    exit();
 } else {
-    print $_SESSION["name"]."さんログイン中";
+    print "　".$_SESSION["name"]."さんログイン中";
     print "<br><br>";
 }
 ?>
@@ -70,26 +70,26 @@ catch(Exception $e) {
 
 <h1 class="h3 mb-3 fw-normal">商品情報修正</h1>
 <div class="container text-center">
-  <p class="product_code">商品コード<?php print $rec["code"];?>の情報を修正します。</p>
+  <p class="product_edit_text">商品コード<?php print $rec["code"];?>の情報を修正します。</p>
 
-<br><br>
+<br>
 <form action="product_edit_check.php" method="post" enctype="multipart/form-data">
-カテゴリー<br>
+<p class="product_edit_text">カテゴリー</p>
 <?php require_once("../common/common.php");?>
 <?php print pulldown_cate();?>
 <br><br>
-商品名<br>
+<p class="product_edit_text">商品名</p>
 <input type="text" name="name" value="<?php print $rec['name'];?>">
 <br><br>
-価格<br>
+<p class="product_edit_text">価格</p>
 <input type="text" name="price" value="<?php print $rec['price'];?>">
 <br><br>
-画像<br>
+<p class="product_edit_text">画像</p>
 <?php print $detail_image;?>
 <br>
 <input type="file" name="image">
 <br><br>
-詳細<br>
+<p class="product_edit_text">詳細</p>
 <textarea name="comments" style="width: 500px; height: 100px;"><?php print $rec['explanation'];?></textarea>
 <br><br>
 <input type="hidden" name="code" value="<?php print $rec['code'];?>">
@@ -99,5 +99,9 @@ catch(Exception $e) {
 </form>
 
 </div>
+
+<footer>
+  <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+</footer>   
 </body>
 </html>

@@ -2,11 +2,11 @@
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
-    print "ログインしていません。<br><br>";
-    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "　ログインしていません。<br><br>";
+    print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
     exit();
 } else {
-    print $_SESSION["name"]."さんログイン中";
+    print "　".$_SESSION["name"]."さんログイン中";
     print "<br><br>";
 }
 ?>
@@ -62,5 +62,8 @@ require_once("../common/common.php");
 </form> 
 
 </div>   
+    <footer>
+        <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+    </footer>   
 </body>
 </html>
