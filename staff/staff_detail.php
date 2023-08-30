@@ -3,9 +3,9 @@
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION["login"]) === false) {
-   print "　ログインしていません。<br><br>";
-   print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
-   exit();
+    print "　ログインしていません。<br><br>";
+    print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    exit();
 } else {
     print "　".$_SESSION["name"]."さんログイン中";
     print "<br><br>";
@@ -17,7 +17,7 @@ if(isset($_SESSION["login"]) === false) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>スタッフ削除完了</title>
+<title>スタッフ詳細</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,10 +38,7 @@ if(isset($_SESSION["login"]) === false) {
 <?php
     try{
     
-require_once("../common/common.php");
-    
-$post = sanitize($_POST);
-$code = $post["code"];
+$code = $_GET["code"];
 
 $dsn = "mysql:host=localhost;dbname=shop_budo;charset=utf8";
 $user = "root";
@@ -49,25 +46,40 @@ $password = "";
 $dbh = new PDO($dsn, $user, $password);
 $dbh -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-$sql = "DELETE FROM mst_staff WHERE code=?";
+$sql = "SELECT code, name FROM mst_staff WHERE code=?";
 $stmt = $dbh -> prepare($sql);
 $data[] = $code;
 $stmt -> execute($data);
     
 $dbh = null;
         
+$rec = $stmt -> fetch(PDO::FETCH_ASSOC);
+        
 }
 catch(Exception $e) {
-    print "　只今障害が発生しております。<br><br>";
-    print "　<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
+    print "只今障害が発生しております。<br><br>";
+    print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
 }
 ?>
 
-<h1 class="h3 mb-3 fw-normal">スタッフ情報削除完了しました。</h1><br><br>
-<p class="center"><a href="staff_list.php">スタッフ一覧へ</a></p>
+<h1 class="h3 mb-3 fw-normal">スタッフ詳細</h1><br>
+<div class="container text-center">    
+
+<p class="underline">スタッフコード</p>
+<?php print $rec["code"];?>
+<br><br>
+<p class="underline">スタッフネーム</p>
+<?php print $rec["name"];?>
+<br><br>
+
+<form>
+<input type="button" onclick="history.back()" value="戻る">
+</form>
+
+</div>
 
 <footer>
-  <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+    <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
 </footer>   
 </body>
 </html>
