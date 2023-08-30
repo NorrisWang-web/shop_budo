@@ -11,13 +11,13 @@ $cart = $_SESSION["cart"];
 
 for($i = 0; $i < $max; $i++) {
     if(preg_match("/\A[0-9]+\z/", $post['quantity'.$i]) === 0) {
-        print "正確な数を入力してください。<br><br>";
-        print "<a href='shop_cart_look.php'>戻る</a>";
+        print "<h3 style='text-align:center;'>正確な数を入力してください。</h3><br>";
+        print "<p style='text-align:center;'><a href='shop_cart_look.php'>戻る</a></p>";
         exit();
     }
     if($post["quantity".$i] <= 0 or $post["quantity".$i] > 10) {
-        print "0以上、10が上限になります。<br><br>";
-        print "<a href='shop_cart_look.php'>戻る</a>";
+        print "<h3 style='text-align:center;'>　0以上、10が上限になります。</h3><br>";
+        print "<p style='text-align:center;'><a href='shop_cart_look.php'>戻る</a></p>";
         exit();
     }
     $quantity[] = $post["quantity".$i];
