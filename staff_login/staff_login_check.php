@@ -31,8 +31,8 @@ $rec = $stmt -> fetch(PDO::FETCH_ASSOC);
 
 // 入力情報間違ったら、エラー画面に遷移され、スタッフログイン画面に戻れるように誘導されます。
 if(empty($rec["name"]) === true) {
-    print "入力が間違っています。<br><br>";
-    print "<a href='staff_login.html'>戻る</a>";
+    print "　入力が間違っています。<br><br>";
+    print "　<a href='staff_login.html'>戻る</a>";
     exit();
 // 入力情報間違っていなければ（正しい場合）スタッフログイン画面から管理画面に遷移されます。
 } else {
@@ -45,7 +45,7 @@ if(empty($rec["name"]) === true) {
 }
 }
 catch(Exception $e) {
-    print "只今障害が発生しております。<br><br>";
-    print "<a href='staff_login.html'>戻る</a>";
+    print "　只今障害が発生しております。<br><br>";
+    print "　<a href='staff_login.html'>戻る</a>";
 }
 ?>

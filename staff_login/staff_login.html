@@ -19,17 +19,17 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
 
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+  <body class="align-items-center py-4 bg-body-tertiary">
     <main class="form-signin w-100 m-auto">
       <form action="staff_login_check.php" method="post">
-        <img
+        <a href='../index.html'><img
           class="mb-4"
           src="../common/images/arrow-right-square-fill.svg"
           alt=""
           width="20px"
           height="20px"
           id="staff_login_icon"
-        />
+        /></a>
         <h1 class="h3 mb-3 fw-normal">スタッフ情報を入力してください。</h1>
         <br />
 
@@ -59,12 +59,13 @@
         <br />
       </form>
       <br />
-      <p>スタッフではない方は下記のリンクでショップのトップに戻れます。</p>
-      <a href="../shop/shop_list.php">商品一覧へ</a>
-      <footer>
-        <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
-      </footer>
-    </main>
+      <p>スタッフではない方は下記のリンクで会員ログイン及び商品一覧に移動できます。</p>
+      <p><a href="../member_login/member_login.html">会員ログイン</a></p>
+      <p><a href="../shop/shop_list.php">商品一覧へ</a></p>
 
+    </main>
+    <footer>
+      <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+    </footer>
   </body>
 </html>
