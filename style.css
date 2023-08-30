@@ -1,12 +1,13 @@
 body {
     font-family: 'Sawarabi Mincho', serif;
     margin: 0;
-    padding: 12px;
+    padding-bottom: 0;
 }
 
-h1 {
+h1, h2, h3, h4 {
     text-align: center;
 }
+
 
 img {
     width: 200px;
@@ -21,17 +22,169 @@ img {
     width: 72px;
 }
 
-footer {
 
+
+.center {
     text-align: center;
 }
 
 .underline {
     text-decoration: underline;
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
-/* Bootstrap template*/
+.product_edit_text {
+    font-size: 1.1rem;
+}
+
+.checkout {
+    margin: 12px;
+    padding: 20px;
+}
+
+.pad_right {
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+}
+
+
+/* denkenmusic style.css より引用 */
+
+header {
+    margin-bottom: 10px;
+    display: flex;
+}
+header p {
+    margin-left:auto;
+    padding-right: 10px;
+    font-weight: bold;
+}
+header h1, header h2 {
+    margin: auto;
+}
+
+header, footer {
+    background: #80ced6; /* greenから#80ced6に変更 */
+    padding: 5px 0;
+}
+
+footer {
+    text-align: center;
+}
+
+main {
+    padding: 0 10px;
+}
+
+
+.box {
+    border: solid 1px;
+    justify-content: center;
+}
+
+.close {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    background: #80ced6; /* greenから#80ced6に変更 */;
+    transition: 0.5s;
+    z-index: 10;
+}
+.open {
+    width: 50%;
+}
+#back {
+    z-index: 5;
+}
+.black {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: black;
+    opacity: 0.8;
+}
+.st {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px;
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+}
+.sm {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px;
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+}
+.look {
+    animation: anime 3s;
+    visibility: visible;
+    animation-fill-mode: forwards;
+}
+@keyframes anime {
+    33% {
+        opacity: 0.3;
+    }
+    66% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+aside {
+padding: 0 10px;
+}
+aside .box {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+aside img {
+    border-radius: 100%;
+}
+.ex textarea {
+    width: 80%;
+    height: 100px;
+}
+.img {
+    text-align: center;
+}
+.npe {
+    padding: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    main {
+        width: 70%;
+    }
+    aside {
+        width: 30%;
+    }
+    wrapper {
+        display: flex;
+    }
+    .list {
+    display: flex;
+}
+    #scrolltop, #scrollmenu, #target {
+        display: none;
+    }
+}
+
+
+
+/* Bootstrap テンプレートより引用 */
 
 *, ::after, ::before {
     box-sizing: border-box;
