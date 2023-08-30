@@ -19,17 +19,17 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
 
-  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+  <body class="align-items-center py-4 bg-body-tertiary">
     <main class="form-signin w-100 m-auto">
       <form action="member_login_check.php" method="post">
-        <img
+        <a href='../index.html'><img
           class="mb-4"
           src="../common/images/bootstrap.svg"
           alt=""
           width="20px"
           height="20px"
           id="login_icon"
-        />
+        /></a>
         <h1 class="h3 mb-3 fw-normal">会員情報を入力してください。</h1>
 
         <div class="form-floating">
@@ -72,15 +72,18 @@
 
         <br /><br />
       </form>
+      <p>ログインせず<a href="../shop/shop_list.php">商品一覧へ</a></p>
+
       <p>会員情報が未登録の方はこちらから登録をお願いします。</p>
-      <a href="./member_register_db.php">会員登録画面へ</a>
+      <p><a href="./member_register_db.php">会員登録画面へ</a></p>
 
-      <footer>
-        <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
-      </footer>
+      <p>スタッフ専用</p>
+      <p><a href="../staff_login/staff_login.html">スタッフ専用ログインへ</a></p>
+
+
     </main>
- 
-
-    <br /><br />
+    <footer>
+      <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+    </footer>
   </body>
 </html>

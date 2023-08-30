@@ -28,13 +28,17 @@ session_destroy();
 <link rel="stylesheet" href="../style.css">
 </head>
     
-<body>
+<body class="align-items-center py-4 bg-body-tertiary">
 
 <h1 class="h3 mb-3 fw-normal">ログアウトしました。</h1>
     
 <br><br>
+<div class="container text-center">
 <a href="../shop/shop_list.php">商品一覧へ</a>
+</div>
 <br><br>
-
+<footer>
+    <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+</footer>
 </body>
 </html>

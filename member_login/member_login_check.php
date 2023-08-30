@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="../style.css">
 </head>
     
-<body>
+<body class="align-items-center py-4 bg-body-tertiary">
+<div class="container text-center">
     
 <?php
 
@@ -44,7 +45,7 @@ if($okflag === false) {
     print "<form><br>";
     print "<input type='button' onclick='history.back()' value='戻る'>";
 } else {
-    print "下記mailアドレスでログインしますか？<br><br>";
+    print "<h3>下記メールアドレスでログインしますか？</h3><br>";
     print $email."<br><br>";
     print "<form action='member_login_done.php' method='post'>";
     print "<input type='hidden' name='email' value='".$email."'>";
@@ -53,7 +54,11 @@ if($okflag === false) {
     print "<input type='submit' value='ログイン'>";
 }
 ?>
-    <br><br>
 
+</div>
+    <br><br>
+    <footer>
+        <p class="mt-5 mb-3 text-body-secondary">©Shop武道 2023</p>
+    </footer>   
 </body>
 </html>
